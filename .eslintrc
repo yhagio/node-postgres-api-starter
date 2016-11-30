@@ -1,0 +1,12 @@
+{
+  "env": {
+    "node": true,
+    "mocha": true
+  },
+  "extends": "airbnb",
+  "rules": {
+    "no-console": [2, {"allow": ["log", "warn", "error"]}],
+    // "semi": ["error", "always"],
+    // "no-extra-semi": 2
+  },
+}

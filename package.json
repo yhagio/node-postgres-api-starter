@@ -1,0 +1,57 @@
+{
+  "name": "node-postgres-api-starter",
+  "version": "0.1.0",
+  "description": "Node.js / Express / PostgreSQL / Sequelize / Authentication API Starter kit",
+  "engines": {
+    "node": "6.6.0",
+    "npm": "3.10.8"
+  },
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint server ; exit 0",
+    "prestart": "psql -c 'DROP DATABASE IF EXISTS npas_dev' && psql -c 'CREATE DATABASE npas_dev'",
+    "start": "export NODE_ENV=development && node index.js",
+    "pretest": "psql -c 'DROP DATABASE IF EXISTS npas_test' && psql -c 'CREATE DATABASE npas_test'",
+    "test": "export NODE_ENV=test && node index.js",
+    "test:only": "export NODE_ENV=test && ./node_modules/.bin/mocha -R spec 'test/**/**.test.js'",
+    "coverage": "istanbul cover _mocha -- -R spec 'test/**/**/**/**test.js'"
+  },
+  "keywords": [
+    "Node.js",
+    "Express",
+    "PostgreSQL",
+    "Sequelize",
+    "JWT",
+    "OAuth",
+    "REST",
+    "API"
+  ],
+  "author": "Yuichi Hagio <yhagio87@gmail.com> (http://github.com/yhagio)",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "compression": "^1.6.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "express-jwt": "^5.1.0",
+    "helmet": "^3.1.0",
+    "jsonwebtoken": "^7.1.9",
+    "pg": "^6.1.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^3.27.0",
+    "sequelize-cli": "^2.4.0"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb": "^13.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^2.2.3",
+    "eslint-plugin-react": "^6.7.1",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "morgan": "^1.7.0",
+    "supertest": "^2.0.1"
+  }
+}
