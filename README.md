@@ -1,4 +1,4 @@
-### Node.js / Express / PostgreSQL (Mongoose) starter kit
+### Node.js / Express / PostgreSQL (Sequelize) starter kit
 
 I created this simple starter kit 
 to get started working on simple Node.js API project quickly
