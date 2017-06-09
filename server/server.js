@@ -11,7 +11,7 @@ require('./config/middlewares')(app);
 app.use('/api', api);
 app.use('/auth', auth);
 
-app.use((err, req, res) => {
+app.use((err, req, res, next) => {
   // if error thrown from jwt validation check
   if (err.name === 'UnauthorizedError') {
     return res.status(401).send({ error: 'Invalid token' });
